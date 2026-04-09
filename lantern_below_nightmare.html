@@ -394,11 +394,15 @@ const iv=setInterval(()=>{
 },50);
 
 // KO-FI — inline iframe, no redirect
-document.getElementById('feedBtn').addEventListener('click',()=>{
-  const m=document.getElementById('km'),f=document.getElementById('kf');
-  if(f.src==='about:blank')f.src='https://ko-fi.com/bedestudio/?hidefeed=true&widget=true&embed=true&preview=true';
-  m.classList.add('open');
-  doFlash('#aa0000',.15);
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('bedestudio', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
 });
 document.getElementById('kclose').addEventListener('click',()=>document.getElementById('km').classList.remove('open'));
 
